@@ -6,9 +6,12 @@ Working on tutorial and npm deployment...
 # Components
 
 ## Map
-Props: 
-
-
+| props | Description | Required |
+|-|-|-|
+| apiKey | google maps api key | true |
+| style | style of the map | true |
+| options | Map options |  |
+| children | <Marker/> etc.  |  |
 
 ## Marker
 | props | Description | Required  |
