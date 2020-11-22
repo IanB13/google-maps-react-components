@@ -18,15 +18,14 @@ const addInfowindow = (state, dispatch, markerKey, children) => {
             marker.addListener('click', () => {
 
                 infoWindow.open(google.map, marker);
-            },{passive:true});
+            });
 
             //this is where the dom is created
             infoWindow.addListener('domready', () => {
                 const target = document.getElementById(markerKey)
                 dispatch({type:"ADD_TO_CLEANUP",target } )
                 ReactDOM.render(children, target);
-            },
-            {passive:true}
+            }
             )
 
             return infoWindow

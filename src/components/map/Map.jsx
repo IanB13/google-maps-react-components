@@ -12,10 +12,8 @@ const WrapperMap = ({ apiKey, options,style, children  }) => {
     //initializes map, only happens once
     useEffect(() => {
         const initMap = async (mapRef) => {
-            console.log(mapRef)
             const google = await GoogleMapsApiLoader({ apiKey })
             const map = new google.maps.Map(mapRef.current, options)
-            console.log("INIT MAP CALLED")
             dispatch({
                 type: 'INIT_MAP',
                 data:{
