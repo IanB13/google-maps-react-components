@@ -1,4 +1,3 @@
-//currently uses redux, should useContext + useReducer
 import React, { useContext, useEffect, useRef } from 'react';
 import {MapProvider,MapContext} from '../../state/mapState'
 import GoogleMapsApiLoader from "google-maps-api-loader";
@@ -13,8 +12,10 @@ const WrapperMap = ({ apiKey, options,style, children  }) => {
     //initializes map, only happens once
     useEffect(() => {
         const initMap = async (mapRef) => {
+            console.log(mapRef)
             const google = await GoogleMapsApiLoader({ apiKey })
             const map = new google.maps.Map(mapRef.current, options)
+            console.log("INIT MAP CALLED")
             dispatch({
                 type: 'INIT_MAP',
                 data:{
@@ -25,8 +26,6 @@ const WrapperMap = ({ apiKey, options,style, children  }) => {
             })
         }
         initMap(mapRef)
-    // should only load once
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
