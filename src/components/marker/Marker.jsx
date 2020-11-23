@@ -9,7 +9,7 @@ import InfoWindow from '../infoWindow/InfoWindow'
 // https://developers.google.com/maps/documentation/javascript/reference/marker#MarkerOptions
 
 //TODO: figure out better options and marker options naming
-const Marker = ({ postion, type, markerKey, markerOptions, children }) => {
+const Marker = ({ position, type, markerKey, markerOptions, children }) => {
 
     //gets google state from store, updates 
     const {state,dispatch} = useContext(MapContext)
@@ -23,7 +23,7 @@ const Marker = ({ postion, type, markerKey, markerOptions, children }) => {
        if (typeof (markerOptions) === 'function') {
            markerOptions = markerOptions(google)
        }
-        const marker = createMarker(google,postion, markerKey,type, markerOptions)
+        const marker = createMarker(google,position, markerKey,type, markerOptions)
         dispatch({type: "ADD_MARKER", data: marker})
         
         return (() => {
@@ -36,7 +36,7 @@ const Marker = ({ postion, type, markerKey, markerOptions, children }) => {
     would cause useEffect to trigger too much causing premature 
     deletion of infowindow dom nodes */
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [dispatch,google,markerKey,type,postion ,markerOptions]) 
+    }, [dispatch,google,markerKey,type,position ,markerOptions]) 
 
     if(children){
     return (

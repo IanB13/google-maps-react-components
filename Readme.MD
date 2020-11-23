@@ -16,7 +16,7 @@ Working on tutorial and npm deployment...
 ## Marker
 | props | Description | Required  |
 |-|-|-|
-| postion | in format {lat:Number ,lng:Number} | true |
+| position | in format {lat:Number ,lng:Number} | true |
 | markerKey | manditory marker key for children rendering  | true |
 | markerOptions | supports google maps marker options, can use a callback function |  |
 | type | Marker type, will be used |  |
