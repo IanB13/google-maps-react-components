@@ -1,6 +1,6 @@
 {
   "name": "google-maps-react-components",
-  "version": "0.1.02",
+  "version": "0.1.03",
   "description": "Google Maps compontents developed using React hooks, supports JSX in markers",
   "main": "index.js",
   "scripts": {
